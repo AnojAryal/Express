@@ -1,10 +1,20 @@
+const morgan = require("morgan");
+const helmet = require("helmet");
 const express = require("express");
 const app = express();
 const logger = require('./logger')
 const auth = require('./auth')
 
-
+ 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(helmet());
+
+//logs the request method and url
+app.use(morgan("tiny"));
+
+//serve static files
+app.use(express.static("public"));
 
 app.use(logger);
 app.use(auth)

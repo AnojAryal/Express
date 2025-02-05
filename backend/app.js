@@ -1,5 +1,13 @@
 const express = require("express");
 const app = express();
+const logger = require('./logger')
+const auth = require('./auth')
+
+
+app.use(express.json());
+
+app.use(logger);
+app.use(auth)
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

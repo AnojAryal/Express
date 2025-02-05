@@ -5,9 +5,14 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const express = require("express");
 const app = express();
+
 const logger = require('./logger')
 const auth = require('./auth')
 
+//set the view engine to pug
+app.set("view engine", "pug");
+
+app.set("views", "./views"); //default
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,8 +41,9 @@ app.use(express.static("public"));
 app.use(logger);
 app.use(auth)
 
+//using template engine
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.render("index", { title: "My Express App", message: "Hello" });
 });
 
 app.get("/api/courses", (req, res) => {

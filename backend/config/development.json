@@ -1,0 +1,9 @@
+{
+    "name" : "backend - Development",
+    "mail" : {
+        "host" : "smtp.mailtrap.io",
+        "auth" : {
+            "password" : "pass"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "mail" : {
+        "auth" : {
+            "password" : "mail_password"
+        }
+    }
+}

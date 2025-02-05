@@ -1,0 +1,9 @@
+{
+    "name" : "backend - Production",
+    "mail" : {
+        "host" : "prod-mail-server",
+        "auth" : {
+            "password" : "pass"
+        }
+    }
+}

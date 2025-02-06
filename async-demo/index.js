@@ -1,14 +1,19 @@
 console.log("Before");
-const user = getUser(1,  (user)=> {
-    console.log("User", user);
-
-    //get the repositories
-    getRepositories(user.gitHubUsername,  (repos)=> {
-        console.log("Repos", repos);
-    });
-});
-
+const user = getUser(1, getRepositories);
 console.log("After");
+
+
+function getRepositories(user) {
+    getRepositories(user.gitHubUsername, getCommits);
+}
+
+function getCommits(repos) {
+    getCommits(repos, displayCommits);
+}
+
+function displayCommits(commits) {
+    console.log(commits);
+}
 
 
 //asyncronous function

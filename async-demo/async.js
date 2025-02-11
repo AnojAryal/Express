@@ -7,7 +7,7 @@ async function displayCommits() {
         const commits = await getCommits(repos);
         console.log(commits);
     } catch (error) {
-        console.error("Error:", error);
+        console.error("Error:", error.message);
     }
 }
 

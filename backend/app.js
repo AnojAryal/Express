@@ -10,6 +10,12 @@ const courses = require("../backend/routes/courses");
 const home = require("../backend/routes/home");
 const logger = require("./middleware/logger");
 const auth = require("./middleware/auth");
+const ConnectDB = require("./config/dbConfig");
+
+
+// Connect to the database
+ConnectDB();
+
 
 //set the view engine to pug
 app.set("view engine", "pug");

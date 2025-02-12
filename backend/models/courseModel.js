@@ -68,7 +68,9 @@ async function getCourses() {
   .find({ author: "Mosh", isPublished: true })
   .sort(
     { name: 1 }
-  );
+  )
+  //count the number of documents
+  .count();
   console.log(courses);
 }
 

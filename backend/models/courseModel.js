@@ -25,6 +25,8 @@ async function createCourse() {
 }
 
 async function getCourses() {
+    //comparison operators
+
     //eq (equal)
     //ne (not equal)
     //gt (greater than)
@@ -39,6 +41,18 @@ async function getCourses() {
 
     //courses that are either 10, 15, or 20
     //.find({ price: { $in: [10, 15, 20] } })
+
+    //logical operators
+    //or
+    //and
+
+    //courses that are published by Mosh and are $15 or $10
+    //.find()
+    //.and([{ author: "Mosh" }, { price: { $in: [10, 15] } }])
+
+    //courses that are published by Mosh or are $15 or $10
+    //.find()
+    //.or([{ author: "Mosh" }, { price: { $in: [10, 15] } }])
 
   const courses = await Course
   .find({ author: "Mosh", isPublished: true })

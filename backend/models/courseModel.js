@@ -54,6 +54,16 @@ async function getCourses() {
     //.find()
     //.or([{ author: "Mosh" }, { price: { $in: [10, 15] } }])
 
+    //regular expressions
+    //starts with Mosh
+    //.find({ author: /^Mosh/ })
+
+    //ends with Hamedani
+    //.find({ author: /Hamedani$/ })
+
+    //contains Mosh
+    //.find({ author: /.*Mosh.*/ })
+
   const courses = await Course
   .find({ author: "Mosh", isPublished: true })
   .sort(
